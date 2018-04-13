@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('gender');
-            $table->integer('timezone', 2);
+            $table->integer('timezone');
             $table->date('birthday');
             $table->string('location');
             $table->boolean('had_feedback_email');
