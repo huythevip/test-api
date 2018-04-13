@@ -20,7 +20,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function create(request $request) {
+    public function store(request $request) {
         $newUser = User::create($request->all());
         $newUser->save();
         return response()->json([
