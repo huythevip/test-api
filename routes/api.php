@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('users', 'UserController@getAllUsers');
-Route::post('users', 'UserController@postInsertUsers');
-Route::get('users/{id}', 'UserController@getUsersById');
-Route::put('users/{id}', 'UserController@putUpdateUsersById');
-Route::delete('users/{id}', 'UserController@deleteDestroyUsersById');
+Route::get('users', 'UserController@index');
+Route::post('users', 'UserController@store');
+Route::get('users/{id}', 'UserController@show');
+Route::put('users/{id}', 'UserController@update');
+Route::delete('users/{id}', 'UserController@delete');
 
