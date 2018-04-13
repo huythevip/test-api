@@ -6,40 +6,40 @@ use Illuminate\Http\Request;
 use App\User;
 class UserController extends Controller
 {
-    public function getAllUsers() {
+    public function index() {
         $allUsers = User::paginate(10);
         return response()->json([
             'users' => $allUsers,
         ]);
     }
 
-    public function getUsersById($id) {
+    public function show($id) {
         $user = User::find($id);
         return response()->json([
             'users' => $user,
         ]);
     }
 
-    public function postInsertUsers(request $request) {
+    public function create(request $request) {
         $newUser = User::create($request->all());
         $newUser->save();
-        return json_encode([
+        return response()->json([
             'message' => 'Successfully created new user',
         ]);
     }
 
-    public function putUpdateUsersById(request $request, $id){
+    public function update(request $request, $id){
         $selectedUser = User::find($id);
         $selectedUser->update($request->all());
         $selectedUser->save();
-        return json_encode([
+        return response()->json([
             'message' => 'Successfully updated user',
         ]);
     }
 
-    public function deleteDestroyUsersById($id) {
+    public function delete($id) {
         User::find($id)->delete();
-        return json_encode([
+        return response()->json([
             'message' => 'Successfully deleted user',
         ]);
     }
