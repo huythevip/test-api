@@ -18,6 +18,14 @@ $factory->define(App\User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'gender' => rand(0, 1),
+        'timezone' => mt_rand(-10, 10),
+        'birthday' => $faker->dateTimeBetween('-40 years', '-18 years'),
+        'location' => '"'.$faker->city.' "'.'"'.$faker->state.'"',
+        'had_feedback_email' => rand(0,1),
+        'sync_name_bio' => rand(0, 1),
+        'bio' => $faker->sentence(100),
+        'picture_url' => $faker->sentence(10),
         'remember_token' => str_random(10),
     ];
 });
