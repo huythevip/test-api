@@ -21,7 +21,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'gender' => rand(0, 1),
         'timezone' => mt_rand(-10, 10),
         'birthday' => $faker->dateTimeBetween('-40 years', '-18 years'),
-        'location' => '"'.$faker->city.' "'.'"'.$faker->state.'"',
+        'location' => $faker->city.", ".$faker->state,
         'had_feedback_email' => rand(0,1),
         'sync_name_bio' => rand(0, 1),
         'bio' => $faker->sentence(100),
