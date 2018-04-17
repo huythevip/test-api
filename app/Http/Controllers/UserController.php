@@ -22,7 +22,8 @@ class UserController extends Controller
 
 
 
-    public function index(request $request) {
+    public function index(request $request) 
+    {
         $allUsers = $this->selectData();
         $filterArray = array();
 
